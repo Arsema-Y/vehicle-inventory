@@ -9,7 +9,7 @@ public class Vehicle {
     double price;
 
     //constractor
-    void vehicle(long vehicleID, String makeModel, String color, int odometerReading, double price){
+    Vehicle(long vehicleID, String makeModel, String color, int odometerReading, double price){
         this.vehicleID = vehicleID;
         this.makeModel = makeModel;
         this.color = color;
@@ -41,7 +41,7 @@ public class Vehicle {
     }
 
 
-    //setters: Return=void + need parameters
+    //setters: Return=void + need parameters (=attributes)
     void setVehicleID(long vehicleID){
         this.vehicleID = vehicleID;
     }
