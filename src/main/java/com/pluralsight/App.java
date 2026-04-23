@@ -3,10 +3,10 @@ package com.pluralsight;
 import java.util.Scanner;
 
 public class App {
+    //user input system
+    static Scanner userInput = new Scanner(System.in);
 
     public static void main(String[] args) {
-        //user input system
-        Scanner userInput = new Scanner(System.in);
 
         //object: vehicles
         Vehicle vehicle1 = new Vehicle(101121, "Ford Explorer", "Red", 45000, 13500);
@@ -45,6 +45,7 @@ public class App {
             //commands
             switch (command) {
                 case 1 -> listVehicles(i, vehicleInventory);
+                case 2 -> searchMakeModel(i, vehicleInventory);
 
             }
 
@@ -55,7 +56,7 @@ public class App {
 
     //command methods
     //1: list all vehicles
-    static void listVehicles ( int i, Vehicle[] vehicleInventory){
+    static void listVehicles(int i, Vehicle[] vehicleInventory) {
         System.out.println("Here are all our Vehicles.");
         int index;
         for (index = 0; index < i; index++) {
@@ -69,19 +70,40 @@ public class App {
 
 
     //2:search my make/model
+    static void searchMakeModel(int i, Vehicle[] vehicleInventory) {
+        System.out.print("Search by Make Model: ");
+        String search = userInput.nextLine();
+
+        int index = 0;
+        boolean found = false;
+
+        for (index = 0; index < i; index++) {
+            if (search.equalsIgnoreCase(vehicleInventory[index].getMakeModel())) {
+                found = true;
+                System.out.println(search + "Found!"
+                        + "\n" + "ID: " + vehicleInventory[index].getVehicleID()
+                        + "\n   Make/Model: " + vehicleInventory[index].getMakeModel()
+                        + "\n   Color: " + vehicleInventory[index].getColor()
+                        + "\n   Price: $" + vehicleInventory[index].getPrice());
+            }
+
+            }
+
+        if(found == false){
+            System.out.println("\"" + search + "\"" + " not found.");
+        }
+
+        //3: search by price (sort)
+
+        //4: search by color
+
+        //5: add vehicle
+
+        //6: quit
 
 
-    //3: search by price (sort)
-
-    //4: search by color
-
-    //5: add vehicle
-
-    //6: quit
-
-
+    }
 }
-
 
 
 
