@@ -2,11 +2,11 @@ package com.pluralsight;
 
 public class Vehicle {
     //attributes
-    long vehicleID;
-    String makeModel;
-    String color;
-    int odometerReading;
-    double price;
+    private long vehicleID;
+    private String makeModel;
+    private String color;
+    private int odometerReading;
+    private double price;
 
     //constractor
     Vehicle(long vehicleID, String makeModel, String color, int odometerReading, double price){
@@ -20,45 +20,45 @@ public class Vehicle {
 
 
     //getters: need return type
-    long getVehicleID(){
+    public long getVehicleID(){
         return this.vehicleID;
     }
 
-    String getMakeModel(){
+    public String getMakeModel(){
         return this.makeModel;
     }
 
-    String getColor(){
+    public String getColor(){
         return this.color;
     }
 
-    int getOdometerReading(){
+    public int getOdometerReading(){
         return this.odometerReading;
     }
 
-    double getPrice(){
+    public double getPrice(){
         return this.price;
     }
 
 
     //setters: Return=void + need parameters (=attributes)
-    void setVehicleID(long vehicleID){
+    public void setVehicleID(long vehicleID){
         this.vehicleID = vehicleID;
     }
 
-    void setMakeModel(String makeModel){
+    public void setMakeModel(String makeModel){
         this.makeModel = makeModel;
     }
 
-    void setColor(String color){
+    public void setColor(String color){
         this.color = color;
     }
 
-    void setOdometerReading(int odometerReading){
+    public void setOdometerReading(int odometerReading){
         this.odometerReading = odometerReading;
     }
 
-    void setPrice(double price){
+    public void setPrice(double price){
         this.price = price;
     }
 
